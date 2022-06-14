@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2022/05/04 17:40:39
-// Design Name: 
-// Module Name: CPU_top
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module CPU_top(clock_in,FPGAReset,start_pg,rx,tx,confirm,index,IOReadData,IOData,control_led);
 input clock_in;
