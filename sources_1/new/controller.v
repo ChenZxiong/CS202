@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2022/04/25 10:33:24
-// Design Name: 
-// Module Name: controller
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module controller(Op,Func,AddrResultHigh,Jr,Jmp,Jal,Branch,nBranch,RegDST,MemOrIOtoReg,RegWrite,MemWrite,MemRead,IORead,IOWrite,ALUSrc,Sftmd,IFormat,Signed,ALUOp);
 input[5:0] Op; // instruction[31..26], opcode
@@ -38,11 +18,11 @@ output IORead; // 1 indicates I/O read
 output IOWrite; // 1 indicates I/O write
 output ALUSrc; // 1 indicate the 2nd data is immidiate (I-format except "beq","bne")
 output Sftmd; // 1 indicate the instruction is shift instruction
-output IFormat;/* 1 indicate the instruction is I-type but isn't °∞beq","bne","LW" or "SW" */
+output IFormat;/* 1 indicate the instruction is I-type but isn't ‚Äúbeq","bne","LW" or "SW" */
 output Signed; // 1 indicate the instruction use the signed value like add,sub,addi,slti,slt
 output reg [1:0] ALUOp;/* if the instruction is R-type or I_format, ALUOp is 2'b10;
-                    if the instruction is°∞beq°± or °∞bne°∞, ALUOp is 2'b01£ª
-                    if the instruction is°∞lw°± or °∞sw°∞, ALUOp is 2'b00£ª*/
+                    if the instruction is‚Äúbeq‚Äù or ‚Äúbne‚Äú, ALUOp is 2'b01Ôºõ
+                    if the instruction is‚Äúlw‚Äù or ‚Äúsw‚Äú, ALUOp is 2'b00Ôºõ*/
  
 assign Jr = (Op == 6'b000000&&Func == 6'b001000)?1:0;
 assign Jmp = (Op == 6'b000010)?1:0;        
